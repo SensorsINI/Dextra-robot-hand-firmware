@@ -30,6 +30,12 @@ void scissor() {
   st.WritePosEx(1, p0s[0]);//extend
   st.WritePosEx(2, p1s[1]);//flex
 }
+
+void clearSerialbuffer(){
+  while (Serial.available()>0){
+    Serial.read();
+  }
+}
 void setup()
 {
   Serial.begin(115200);
@@ -39,7 +45,6 @@ void setup()
   paper();
   delay(1000);
 }
-
 void loop()
 {
   if (Serial.available() > 0) {
